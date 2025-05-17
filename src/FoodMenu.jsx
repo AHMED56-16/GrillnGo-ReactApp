@@ -12,11 +12,13 @@ function FoodMenu() {
     fetch('https://forkify-api.herokuapp.com/api/search?q=bbq')
       .then((res) => res.json())
       .then((data) => {
-        setRecipes(data.recipes);
+        console.log('API response:', data); 
+        setRecipes(data.recipes || []); 
         setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching recipes:', error);
+        setRecipes([]); 
         setLoading(false);
       });
   };

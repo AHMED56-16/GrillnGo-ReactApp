@@ -1,4 +1,8 @@
 function RecipeList({ recipes }) {
+  if (!Array.isArray(recipes) || recipes.length === 0) {
+    return <p className="loading-text">No recipes to display.</p>;
+  }
+
   return (
     <div className="recipe-list">
       {recipes.map((recipe) => (

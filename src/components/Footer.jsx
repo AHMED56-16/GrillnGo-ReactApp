@@ -1,18 +1,9 @@
-function RecipeList({ recipes }) {
+function Footer() {
   return (
-    <div className="recipe-list">
-      {recipes.map((recipe) => (
-        <div key={recipe.recipe_id} className="recipe-card">
-          <img src={recipe.image_url} alt={recipe.title} />
-          <h2>{recipe.title}</h2>
-          <p>{recipe.publisher}</p>
-          <a href={recipe.source_url} target="_blank" rel="noopener noreferrer">
-            View Recipe
-          </a>
-        </div>
-      ))}
-    </div>
+    <footer className="footer">
+      <p>© {new Date().getFullYear()} FoodMenu. All rights reserved. | Developed by Muhammad Ahmed Raza</p>
+    </footer>
   );
 }
 
-export default RecipeList;
+export default Footer;
